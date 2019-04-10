@@ -1,0 +1,31 @@
+<div class='container'>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <% @user.roles.each do |r| %>
+  <%= "[#{Role.find(r.id).role_name}]" %>
+  <% end %></p>
+  <p>
+  <strong> Gimnasio </strong>
+  <% @user.gymsites.each do |g| %>
+  <%= "[#{Gymsite.find(g.id).surname}]" %>
+  <% end %></p>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back', users_path %>
+</div>

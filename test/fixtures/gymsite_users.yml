@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  gymsite: one
+  from_date: 2019-04-10
+  thru_date: 2019-04-10
+
+two:
+  user: two
+  gymsite: two
+  from_date: 2019-04-10
+  thru_date: 2019-04-10

@@ -1,0 +1,27 @@
+ <div class = 'container simple_form'>
+<%= simple_form_for @user do |form| %>
+  <div class="field">
+    <%= form.input :first_name, label: 'Nombre' %>
+  </div>
+
+  <div class="field">
+    <%= form.input :last_name, label: 'Apellidos' %>
+  </div>
+
+  <div class="field">
+    <%= form.input :password, label: 'Password', input_html: { autocomplete: 'current-password' }, hint: 'Al menos 8 caracteres' %>
+  </div>
+
+  <div class="field">
+    <%= form.input :email, label: 'Correo' %>
+  </div>
+
+    <%= form.association :roles, as: :check_boxes, label_method: :role_name %>
+    <%= form.select :gymsite_ids, Gymsite.all.collect { |g| [g.surname, g.id] }, include_blank: true %>
+
+
+  <div class="actions">
+    <%= form.button 'submit' %>
+  </div>
+<% end %>
+</div>

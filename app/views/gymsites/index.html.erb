@@ -1,0 +1,35 @@
+<div class = 'container'>
+<p id="notice"><%= notice %></p>
+
+<h1>Gimnasios</h1>
+
+<table class = 'table table-hover'>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Código SRI</th>
+      <th>Descripción</th>
+      <th>Correo</th>
+      <th colspan="3"> Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gymsites.each do |gym| %>
+      <tr>
+        <td><%=gym.surname  %></td>
+        <td><%= gym.legal_code %></td>
+        <td><%= gym.email %></td>
+        <td><%= gym.description %></td>
+        <td><%= link_to 'Show', gym %></td>
+        <td><%= link_to 'Edit', edit_gymsite_path(gym) %></td>
+        <td><%= link_to 'Destroy', gym, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gym Site', new_gymsite_path %>
+</div>
